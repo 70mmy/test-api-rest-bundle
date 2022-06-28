@@ -18,14 +18,14 @@ class JsonFileComparatorTest  extends TestCase
     protected function buildJsonFileComparator($left, $right, $matcherReturn = true, $sub_right = null)
     {
         $matcher = $this->getMockBuilder('EveryCheck\TestApiRestBundle\Matcher\Matcher')
-            ->setMethods(['match','getError'])
+            ->addMethods(['match','getError'])
             ->getMock();
 
         $matcher->method('match')->willReturn($matcherReturn);
         $matcher->method('getError')->willReturn('mock error');
 
         $jsonFileComparator = $this->getMockBuilder('EveryCheck\TestApiRestBundle\Service\JsonFileComparator')
-			->setMethods(['loadJSONFromString','loadJSONFromFile'])
+			->addMethods(['loadJSONFromString','loadJSONFromFile'])
 			->setConstructorArgs([$matcher])
             ->getMock();
 
