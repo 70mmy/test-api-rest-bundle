@@ -2,6 +2,7 @@
 namespace EveryCheck\TestApiRestBundle\Matcher;
 
 use Coduo\PHPMatcher\Factory;
+use Coduo\PHPMatcher\PHPMatcher;
 
 class Matcher implements MatcherInterface
 {
@@ -10,7 +11,7 @@ class Matcher implements MatcherInterface
 
     public function __construct()
     {
-        $this->matcher = (new Factory\SimpleFactory())->createMatcher();
+        $this->matcher = new PHPMatcher();
     }
 
     public function match($a, $b): bool
@@ -20,6 +21,6 @@ class Matcher implements MatcherInterface
 
     public function getError(): string
     {
-        return $this->matcher->getError();
+        return $this->matcher->error();
     }
 }
