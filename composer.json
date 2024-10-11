@@ -9,7 +9,7 @@
     ],
     "license": "MIT",
     "require": {
-        "coduo/php-matcher": "^5.0",
+        "coduo/php-matcher": "^6.0",
         "jms/serializer-bundle": "3.*",
         "myclabs/deep-copy": "^1.10",
         "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0",
